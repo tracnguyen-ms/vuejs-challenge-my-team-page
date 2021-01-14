@@ -1,6 +1,7 @@
 {
   "name": "vuejs-challenge-my-team-page",
   "scripts": {
+    "heroku-postbuild": "npm run build",
     "dev": "nuxt",
     "build": "nuxt build",
     "generate": "nuxt generate",
