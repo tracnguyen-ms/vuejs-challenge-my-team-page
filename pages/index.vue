@@ -13,7 +13,7 @@
     <div class="my-team__members">
       <article
         v-for="member of members"
-        v-bind:key="member"
+        :key="member"
         class="my-team__members__member-card"
       >
         <img
@@ -34,6 +34,19 @@
 <script>
 export default {
   name: 'MembersPage',
+  data() {
+    return {
+      title: 'My Team Page',
+      description: 'My Team Page - Desc',
+      imageUrl: 'https://nuxtjs.org/nuxt-card.png',
+      members: [],
+    };
+  },
+  async fetch() {
+    this.members = await fetch(
+      'https://600646b73698a80017de1556.mockapi.io/api/v1/members/'
+    ).then((res) => res.json());
+  },
   head() {
     return {
       title: this.title,
@@ -70,19 +83,6 @@ export default {
         },
       ],
     };
-  },
-  data() {
-    return {
-      title: 'My Team Page',
-      description: 'My Team Page - Desc',
-      imageUrl: 'https://nuxtjs.org/nuxt-card.png',
-      members: [],
-    };
-  },
-  async fetch() {
-    this.members = await fetch(
-      'https://600646b73698a80017de1556.mockapi.io/api/v1/members/'
-    ).then((res) => res.json());
   },
 };
 </script>
