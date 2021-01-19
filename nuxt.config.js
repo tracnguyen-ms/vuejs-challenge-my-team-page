@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nuxt-test-app',
+    title: 'vuejs-challenge-my-team-page',
     htmlAttrs: {
       lang: 'en',
     },
