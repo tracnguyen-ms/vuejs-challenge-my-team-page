@@ -11,10 +11,10 @@
             </p>
         </div>
         <div class="my-team__members">
-            <article class="my-team__member-card" v-for="member of members">
-                <img class="my-team__member-card__photo" v-bind:src="member.photoUrl" alt=""/>
-                <div class="my-team__member-card__job-title">{{ member.jobTitle }}</div>
-                <h2 class="my-team__member-card__name">{{ member.name }}</h2>
+            <article class="my-team__members__member-card" v-for="member of members">
+                <img class="my-team__members__member-card__photo" v-bind:src="member.photoUrl" alt=""/>
+                <div class="my-team__members__member-card__job-title">{{ member.jobTitle }}</div>
+                <h2 class="my-team__members__member-card__name">{{ member.name }}</h2>
             </article>
         </div>
     </div>
