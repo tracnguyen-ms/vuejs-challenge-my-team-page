@@ -1,0 +1,15 @@
+{
+  "presets": [
+    ["env", { "modules": false }]
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        "dynamic-import-node"
+      ],
+      "presets": [
+        ["env", { "targets": { "node": "current" }}]
+      ]
+    }
+  }
+}
