@@ -11,31 +11,26 @@
             </p>
         </div>
         <div class="my-team__members">
-            <article class="my-team__member-card">
-                <img class="my-team__member-card__photo" v-bind:src="imageBaseUrl + '/photo1.png'" alt=""/>
-                <div class="my-team__member-card__job-title">Product Owner</div>
-                <h2 class="my-team__member-card__name">Bill Mahoney</h2>
-            </article>
-            <article class="my-team__member-card">
-                <img class="my-team__member-card__photo" v-bind:src="imageBaseUrl + '/photo2.png'" alt=""/>
-                <h2 class="my-team__member-card__name">Bill Mahoney</h2>
-                <div class="my-team__member-card__job-title">Product Owner</div>
-            </article>
-            <article class="my-team__member-card">
-                <img class="my-team__member-card__photo" v-bind:src="imageBaseUrl + '/photo3.png'" alt=""/>
-                <h2 class="my-team__member-card__name">Bill Mahoney</h2>
-                <div class="my-team__member-card__job-title">Product Owner</div>
+            <article class="my-team__member-card" v-for="member of members">
+                <img class="my-team__member-card__photo" v-bind:src="member.photoUrl" alt=""/>
+                <div class="my-team__member-card__job-title">{{ member.jobTitle }}</div>
+                <h2 class="my-team__member-card__name">{{ member.name }}</h2>
             </article>
         </div>
     </div>
 </template>
 <script>
     export default {
-        name: 'LandingPage',
+        name: 'MembersPage',
         data() {
             return {
-                imageBaseUrl: './images'
+                members: []
             };
         },
+        async fetch() {
+            this.members = await fetch(
+                'https://600646b73698a80017de1556.mockapi.io/api/v1/members/'
+            ).then(res => res.json())
+        }
     }
 </script>
