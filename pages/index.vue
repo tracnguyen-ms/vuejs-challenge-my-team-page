@@ -33,12 +33,9 @@
 </template>
 <script>
 export default {
-  name: 'MembersPage',
+  name: 'TeamPage',
   data() {
     return {
-      title: 'My Team Page',
-      description: 'My Team Page - Desc',
-      imageUrl: 'https://nuxtjs.org/nuxt-card.png',
       members: [],
     };
   },
@@ -49,39 +46,7 @@ export default {
   },
   head() {
     return {
-      title: this.title,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.description,
-        },
-        {
-          hid: 'og:title',
-          property: 'og:title',
-          content: this.title,
-        },
-        {
-          hid: 'og:description',
-          property: 'og:description',
-          content: this.description,
-        },
-        {
-          hid: 'og:image',
-          property: 'og:image',
-          content: this.imageUrl,
-        },
-        {
-          hid: 'og:image:secure_url',
-          property: 'og:image:secure_url',
-          content: this.imageUrl,
-        },
-        {
-          hid: 'og:image:alt',
-          property: 'og:image:alt',
-          content: this.title,
-        },
-      ],
+      title: 'My Team Page',
     };
   },
 };
