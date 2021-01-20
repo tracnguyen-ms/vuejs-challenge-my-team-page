@@ -14,15 +14,11 @@
 <script>
 export default {
   name: 'MyTeamMembers',
-  data() {
-    return {
-      members: [],
-    };
-  },
-  async fetch() {
-    this.members = await fetch(
-      `${process.env.API_BASE_URL}/members/`
-    ).then((res) => res.json());
+  props: {
+    members: {
+      type: Array,
+      required: false,
+    },
   },
 };
 </script>

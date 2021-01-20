@@ -10,7 +10,7 @@
         working in various locations from the world
       </p>
     </div>
-    <MyTeamMembers />
+    <MyTeamMembers :members="members" />
   </div>
 </template>
 <script>

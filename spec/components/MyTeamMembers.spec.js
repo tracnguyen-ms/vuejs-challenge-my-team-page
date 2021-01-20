@@ -7,10 +7,8 @@ describe('MyTeamMembersComponent', () => {
 
   beforeEach(() => {
     wrapper = shallowMount(MyTeamMembersComponent, {
-      data() {
-        return {
-          members: sampleMembers,
-        };
+      propsData: {
+        members: sampleMembers,
       },
     });
   });
