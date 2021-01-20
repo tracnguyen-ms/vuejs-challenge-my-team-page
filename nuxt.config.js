@@ -11,6 +11,11 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      // Homepage/default values
+      {
+        name: 'description',
+        content: 'Vuejs Challenge - My Team page',
+      },
     ],
     link: [{ rel: 'dns-prefetch', href: `//www.google-analytics.com` }],
   },

@@ -33,7 +33,7 @@ export default {
   },
   async fetch() {
     this.members = await fetch(
-      'https://600646b73698a80017de1556.mockapi.io/api/v1/members/'
+      process.env.API_BASE_URL + '/members/'
     ).then((res) => res.json());
   },
   head() {
