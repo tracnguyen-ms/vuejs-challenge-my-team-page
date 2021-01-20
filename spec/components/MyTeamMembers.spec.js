@@ -29,4 +29,10 @@ describe('MyTeamMembersComponent', () => {
       sampleMembers[0].name
     );
   });
+
+  test('page has correct total items', () => {
+    expect(wrapper.findAll('.member-card__name').length).toBe(
+      sampleMembers.length
+    );
+  });
 });

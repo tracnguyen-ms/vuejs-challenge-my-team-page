@@ -21,7 +21,7 @@ export default {
   },
   async fetch() {
     this.members = await fetch(
-      process.env.API_BASE_URL + '/members/'
+      `${process.env.API_BASE_URL}/members/`
     ).then((res) => res.json());
   },
 };
