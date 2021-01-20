@@ -42,3 +42,5 @@ const members = [
     jobTitle: 'Forward Intranet Representative',
   },
 ];
+
+export { members };

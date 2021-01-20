@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
 import PageIndex from '~/pages/index';
-import members from '~/spec/sample-data/members';
+import { members } from '~/spec/sample-data/members';
 
 describe('IndexPage', () => {
   let wrapper;
@@ -11,9 +11,6 @@ describe('IndexPage', () => {
         return {
           members: members,
         };
-      },
-      fetch() {
-        this.members = members;
       },
     });
   });
@@ -28,8 +25,6 @@ describe('IndexPage', () => {
   });
 
   test('page has correct data', () => {
-    console.log(wrapper);
-    console.log(members[0]);
     expect(wrapper.find('.member-card__name').text()).toBe(members[0].name);
   });
 });
