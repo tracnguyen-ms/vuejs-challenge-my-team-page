@@ -1,24 +1,20 @@
-import { createLocalVue, mount } from '@vue/test-utils';
-import Vuex from 'vuex';
-import IndexPage from '~/pages/index';
+import { shallowMount } from '@vue/test-utils';
+import PageIndex from '~/pages/index';
 import members from '~/spec/sample-data/members';
 
-const localVue = createLocalVue();
-localVue.use(Vuex);
-
 describe('IndexPage', () => {
-  let store, wrapper;
+  let wrapper;
 
-  beforeAll(() => {
-    store = new Vuex.Store({
-      state: {
-        members: members,
+  beforeEach(() => {
+    wrapper = shallowMount(PageIndex, {
+      data() {
+        return {
+          members: members,
+        };
       },
-    });
-
-    wrapper = mount(IndexPage, {
-      store,
-      localVue,
+      fetch() {
+        this.members = members;
+      },
     });
   });
 
@@ -32,8 +28,8 @@ describe('IndexPage', () => {
   });
 
   test('page has correct data', () => {
-    expect(
-      wrapper.find('.my-team__members__member-card__name:first-child').text()
-    ).toBe(members[0].name);
+    console.log(wrapper);
+    console.log(members[0]);
+    expect(wrapper.find('.member-card__name').text()).toBe(members[0].name);
   });
 });

@@ -11,20 +11,12 @@
       </p>
     </div>
     <div class="my-team__members">
-      <article
-        v-for="member of members"
-        :key="member"
-        class="my-team__members__member-card"
-      >
-        <img
-          class="my-team__members__member-card__photo"
-          :src="member.photoUrl"
-          alt=""
-        />
-        <div class="my-team__members__member-card__job-title">
+      <article v-for="member of members" :key="member" class="member-card">
+        <img class="member-card__photo" :src="member.photoUrl" alt="" />
+        <div class="member-card__job-title">
           {{ member.jobTitle }}
         </div>
-        <h2 class="my-team__members__member-card__name">
+        <h2 class="member-card__name">
           {{ member.name }}
         </h2>
       </article>
