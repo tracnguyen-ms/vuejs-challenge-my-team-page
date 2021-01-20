@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
 import PageIndex from '~/pages/index';
-import { members } from '~/spec/sample-data/members';
+import { sampleMembers } from '~/spec/sample-data/members';
 
 describe('IndexPage', () => {
   let wrapper;
@@ -9,7 +9,7 @@ describe('IndexPage', () => {
     wrapper = shallowMount(PageIndex, {
       data() {
         return {
-          members: members,
+          members: sampleMembers,
         };
       },
     });
@@ -25,6 +25,8 @@ describe('IndexPage', () => {
   });
 
   test('page has correct data', () => {
-    expect(wrapper.find('.member-card__name').text()).toBe(members[0].name);
+    expect(wrapper.find('.member-card__name').text()).toBe(
+      sampleMembers[0].name
+    );
   });
 });

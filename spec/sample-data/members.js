@@ -1,4 +1,4 @@
-const members = [
+const sampleMembers = [
   {
     id: '1',
     createdAt: '2021-01-18T08:59:21.550Z',
@@ -43,4 +43,4 @@ const members = [
   },
 ];
 
-export { members };
+export { sampleMembers };
