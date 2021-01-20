@@ -10,7 +10,9 @@
         working in various locations from the world
       </p>
     </div>
-    <MyTeamMembers :members="members" />
+    <div class="my-team__members">
+      <MemberCard v-for="member of members" :key="member.id" :member="member" />
+    </div>
   </div>
 </template>
 <script>
